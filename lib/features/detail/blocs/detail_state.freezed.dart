@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$DetailState {
 
- CharacterModel? get model; DetailStatus get status;
+ CharacterResultModel? get model; DetailStatus get status;
 /// Create a copy of DetailState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -46,7 +46,7 @@ abstract mixin class $DetailStateCopyWith<$Res>  {
   factory $DetailStateCopyWith(DetailState value, $Res Function(DetailState) _then) = _$DetailStateCopyWithImpl;
 @useResult
 $Res call({
- CharacterModel? model, DetailStatus status
+ CharacterResultModel? model, DetailStatus status
 });
 
 
@@ -66,7 +66,7 @@ class _$DetailStateCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? model = freezed,Object? status = null,}) {
   return _then(_self.copyWith(
 model: freezed == model ? _self.model : model // ignore: cast_nullable_to_non_nullable
-as CharacterModel?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as CharacterResultModel?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as DetailStatus,
   ));
 }
@@ -81,7 +81,7 @@ class _DetailState implements DetailState {
   const _DetailState({required this.model, required this.status});
   
 
-@override final  CharacterModel? model;
+@override final  CharacterResultModel? model;
 @override final  DetailStatus status;
 
 /// Create a copy of DetailState
@@ -114,7 +114,7 @@ abstract mixin class _$DetailStateCopyWith<$Res> implements $DetailStateCopyWith
   factory _$DetailStateCopyWith(_DetailState value, $Res Function(_DetailState) _then) = __$DetailStateCopyWithImpl;
 @override @useResult
 $Res call({
- CharacterModel? model, DetailStatus status
+ CharacterResultModel? model, DetailStatus status
 });
 
 
@@ -134,7 +134,7 @@ class __$DetailStateCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? model = freezed,Object? status = null,}) {
   return _then(_DetailState(
 model: freezed == model ? _self.model : model // ignore: cast_nullable_to_non_nullable
-as CharacterModel?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as CharacterResultModel?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as DetailStatus,
   ));
 }

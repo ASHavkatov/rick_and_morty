@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:rick_and_morty/core/routing/routes.dart';
 import 'package:rick_and_morty/core/utils/colors.dart';
 import 'package:rick_and_morty/features/home/blocs/home_bloc.dart';
 import 'package:rick_and_morty/features/home/blocs/home_state.dart';
@@ -39,7 +40,9 @@ class HomeScreen extends StatelessWidget {
                 return Padding(
                   padding: EdgeInsets.only(bottom: 25),
                   child: HomeItem(
-                    onTap: (){},
+                    onTap: (){
+                      context.push(Routes.getDetail(model.id));
+                    },
                     image: model.image,
                     name: model.name,
                     status: model.status,

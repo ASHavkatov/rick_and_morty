@@ -5,6 +5,16 @@ import '../../../core/utils/colors.dart';
 import 'detail_text.dart';
 
 class HomeItem extends StatelessWidget {
+  Color getStatusColor(String status) {
+    if (status == "Alive") {
+      return Colors.green;
+    } else if (status == "Dead") {
+      return Colors.red;
+    } else {
+      return Colors.grey;
+    }
+  }
+
   const HomeItem({
     super.key,
     required this.image,
@@ -12,7 +22,8 @@ class HomeItem extends StatelessWidget {
     required this.status,
     required this.species,
     required this.location,
-    required this.seen, required this.onTap,
+    required this.seen,
+    required this.onTap,
   });
 
   final String image, name, status, species, location, seen;
@@ -66,7 +77,15 @@ class HomeItem extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Container(width: 5, height: 5, decoration: BoxDecoration()),
+                    Container(
+                      width: 12,
+                      height: 12,
+                      decoration: BoxDecoration(
+                        color: getStatusColor(status),
+                        borderRadius: BorderRadius.circular(9),
+                      ),
+                    ),
+                    SizedBox(width: 5),
                     Text(
                       "${status} - ${species}",
                       style: TextStyle(

@@ -20,12 +20,20 @@ class ApiClient {
     }
   }
 
-  Future<dynamic>fetchEpisode()async{
-    final response = await dio.get("/episode");
+  Future<dynamic>fetchEpisode(int id)async{
+    final response = await dio.get("/episode/$id");
     if (response.statusCode == 200) {
       return response.data;
     }  else{
       throw Exception("Episode ni olib kelishda hatolik bor");
+    }
+  }
+  Future<dynamic>fetchDetail(int id)async{
+    final response =await dio.get("/character/$id");
+    if (response.statusCode == 200) {
+      return response.data;
+    }  else{
+      throw Exception("Detail ni olib kelishda hatolik bor");
     }
   }
 }

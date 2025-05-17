@@ -7,7 +7,7 @@ class CharacterRepository{
 
   Future<CharacterModel>fetchCharacter()async{
     final rawCharacter = await client.fetchCharacter();
-    final detail = CharacterModel.fromJson(rawCharacter);
+    final detail = CharacterModel.fromJson(rawCharacter as Map<String, dynamic>);
     return detail;
   }
 }

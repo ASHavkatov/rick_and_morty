@@ -19,7 +19,6 @@ class CharacterResultModel {
   final String created;
   final String image;
 
-
   CharacterResultModel({
     required this.id,
     required this.name,
@@ -32,8 +31,9 @@ class CharacterResultModel {
     required this.episode,
     required this.url,
     required this.created,
-    required this.image
+    required this.image,
   });
 
-  factory CharacterResultModel.fromJson(Map<String, dynamic>json)=> _$CharacterResultModelFromJson(json);
+  factory CharacterResultModel.fromJson(Map<String, dynamic> json) =>
+      _$CharacterResultModelFromJson(json);
 }
