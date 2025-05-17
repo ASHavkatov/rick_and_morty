@@ -9,13 +9,13 @@ part of 'location_model.dart';
 LocationModel _$LocationModelFromJson(Map<String, dynamic> json) =>
     LocationModel(
       info: InfoModel.fromJson(json['info'] as Map<String, dynamic>),
-      result:
-          (json['result'] as List<dynamic>)
-              .map(
-                (e) => LocationResultModel.fromJson(e as Map<String, dynamic>),
-              )
-              .toList(),
+      result: (json['result'] as List<dynamic>)
+          .map((e) => LocationResultModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$LocationModelToJson(LocationModel instance) =>
-    <String, dynamic>{'info': instance.info, 'result': instance.result};
+    <String, dynamic>{
+      'info': instance.info,
+      'result': instance.result,
+    };

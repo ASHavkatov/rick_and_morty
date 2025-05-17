@@ -9,13 +9,13 @@ part of 'character_model.dart';
 CharacterModel _$CharacterModelFromJson(Map<String, dynamic> json) =>
     CharacterModel(
       info: InfoModel.fromJson(json['info'] as Map<String, dynamic>),
-      results:
-          (json['results'] as List<dynamic>)
-              .map(
-                (e) => CharacterResultModel.fromJson(e as Map<String, dynamic>),
-              )
-              .toList(),
+      results: (json['results'] as List<dynamic>)
+          .map((e) => CharacterResultModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$CharacterModelToJson(CharacterModel instance) =>
-    <String, dynamic>{'info': instance.info, 'results': instance.results};
+    <String, dynamic>{
+      'info': instance.info,
+      'results': instance.results,
+    };

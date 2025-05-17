@@ -7,12 +7,14 @@ part of 'episode_model.dart';
 // **************************************************************************
 
 EpisodeModel _$EpisodeModelFromJson(Map<String, dynamic> json) => EpisodeModel(
-  info: InfoModel.fromJson(json['info'] as Map<String, dynamic>),
-  result:
-      (json['result'] as List<dynamic>)
+      info: InfoModel.fromJson(json['info'] as Map<String, dynamic>),
+      result: (json['result'] as List<dynamic>)
           .map((e) => EpisodeResultModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-);
+    );
 
 Map<String, dynamic> _$EpisodeModelToJson(EpisodeModel instance) =>
-    <String, dynamic>{'info': instance.info, 'result': instance.result};
+    <String, dynamic>{
+      'info': instance.info,
+      'result': instance.result,
+    };

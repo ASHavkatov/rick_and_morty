@@ -36,19 +36,20 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
               itemCount: state.model!.results.length,
               itemBuilder: (context, index) {
-                final model = state.model!.results[index];
+                final model = state.model!;
+                final results = model.results[index];
                 return Padding(
                   padding: EdgeInsets.only(bottom: 25),
                   child: HomeItem(
                     onTap: (){
-                      context.push(Routes.getDetail(model.id));
+                      context.push(Routes.getDetail(results.id));
                     },
-                    image: model.image,
-                    name: model.name,
-                    status: model.status,
-                    species: model.species,
-                    location: model.location.name,
-                    seen: model.origin.name,
+                    image: results.image,
+                    name: results.name,
+                    status: results.status,
+                    species: results.species,
+                    location: results.location.name,
+                    seen: results.origin.name,
                   ),
                 );
               },

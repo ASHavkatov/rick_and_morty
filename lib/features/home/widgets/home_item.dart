@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/utils/colors.dart';
 import 'detail_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class HomeItem extends StatelessWidget {
   Color getStatusColor(String status) {
@@ -48,11 +50,12 @@ class HomeItem extends StatelessWidget {
             ),
             child: InkWell(
               onTap: onTap,
-              child: Image.network(
-                image,
-                width: 180,
-                height: 180,
-                fit: BoxFit.cover,
+              child: CachedNetworkImage(
+                imageUrl:
+                  image,
+                  width: 180.w,
+                  height: 180.h,
+                  fit: BoxFit.cover,
               ),
             ),
           ),
@@ -63,7 +66,7 @@ class HomeItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  width: 180,
+                  width: 160.w,
                   child: Text(
                     name,
                     maxLines: 1,
@@ -78,8 +81,8 @@ class HomeItem extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      width: 12,
-                      height: 12,
+                      width: 12.w,
+                      height: 12.h,
                       decoration: BoxDecoration(
                         color: getStatusColor(status),
                         borderRadius: BorderRadius.circular(9),
@@ -96,7 +99,7 @@ class HomeItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 7),
+                SizedBox(height: 7.h),
                 DetailText(location: location, seen: seen),
               ],
             ),

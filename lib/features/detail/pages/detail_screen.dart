@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rick_and_morty/core/routing/routes.dart';
 import 'package:rick_and_morty/core/utils/colors.dart';
@@ -27,7 +29,7 @@ class DetailScreen extends StatelessWidget {
                 slivers: [
                   SliverAppBar(
                     backgroundColor: AppColors.backgroundColor,
-                    expandedHeight: 350,
+                    expandedHeight: 350.h,
                     pinned: true,
                     leading: InkWell(
                       onTap: () {
@@ -39,6 +41,7 @@ class DetailScreen extends StatelessWidget {
                         size: 30,
                       ),
                     ),
+                    actions: [IconButton(onPressed: (){context.go(Routes.home);}, icon: Icon(Icons.home, color: Colors.white,))],
                     flexibleSpace: FlexibleSpaceBar(
                       title: Text(
                         model.name,
@@ -46,10 +49,11 @@ class DetailScreen extends StatelessWidget {
                       ),
                       background: ClipRRect(
                         borderRadius: BorderRadius.circular(14),
-                        child: Image.network(
-                          model.image,
-                          fit: BoxFit.cover,
-                          width: double.infinity,
+                        child: CachedNetworkImage(
+                          imageUrl:
+                            model.image,
+                            fit: BoxFit.cover,
+                            width: double.infinity,
                         ),
                       ),
                     ),
@@ -72,7 +76,7 @@ class DetailScreen extends StatelessWidget {
                             name: model.location.name,
                           ),
                           DetailItem(type: "Created", name: model.created),
-                          SizedBox(height: 20),
+                          SizedBox(height: 20.h),
                           Text(
                             "Episodes:",
                             style: TextStyle(

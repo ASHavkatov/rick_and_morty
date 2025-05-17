@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rick_and_morty/core/utils/colors.dart';
 import 'package:rick_and_morty/features/detail/widgets/detail_item.dart';
@@ -23,6 +24,7 @@ class EpisodeScreen extends StatelessWidget {
             appBar: AppBar(
               centerTitle: true,
               title: Text("Episode", style: TextStyle(color: Colors.white)),
+              actions: [IconButton(onPressed: (){context.go(Routes.home);}, icon: Icon(Icons.home, color: Colors.white,))],
               backgroundColor: AppColors.backgroundColor,
               leading: InkWell(onTap: (){context.pop();},child: Icon(Icons.arrow_back, color: Colors.white, size: 30,),),
             ),
@@ -47,7 +49,7 @@ class EpisodeScreen extends StatelessWidget {
                           type: "Created:",
                           name: state.model!.created,
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 20.h),
                         Text(
                           "Characters:",
                           style: TextStyle(
@@ -56,7 +58,7 @@ class EpisodeScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 10.h),
                       ],
                     ),
                   ),

@@ -1,12 +1,21 @@
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'info_model.g.dart';
 
 @JsonSerializable()
+
 class InfoModel {
+
   final int count;
+
+
   final int pages;
+
+
   final String? next;
+
+
   final String? prev;
 
   InfoModel({
@@ -19,3 +28,6 @@ class InfoModel {
   factory InfoModel.fromJson(Map<String, dynamic> json) =>
       _$InfoModelFromJson(json);
 }
+
+
+

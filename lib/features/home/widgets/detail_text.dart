@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/utils/colors.dart';
 
@@ -21,7 +22,7 @@ class DetailText extends StatelessWidget {
           ),
         ),
         Container(
-          width: 180,
+          width: 160.w,
           child: Text(
             location,
             maxLines: 1,
@@ -34,7 +35,7 @@ class DetailText extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 10.h),
         Text(
           "First seen in:",
           style: TextStyle(
@@ -44,7 +45,7 @@ class DetailText extends StatelessWidget {
           ),
         ),
         Container(
-          width: 180,
+          width: 160.w,
           child: Text(
             seen,
             maxLines: 1,

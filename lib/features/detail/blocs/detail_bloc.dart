@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty/core/data/repositories/character_repository.dart';
 import 'package:rick_and_morty/core/data/repositories/detail_repository.dart';
 import 'package:rick_and_morty/features/detail/blocs/detail_event.dart';
 import 'package:rick_and_morty/features/detail/blocs/detail_state.dart';

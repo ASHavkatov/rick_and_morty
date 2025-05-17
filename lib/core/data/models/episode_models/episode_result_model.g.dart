@@ -11,10 +11,9 @@ EpisodeResultModel _$EpisodeResultModelFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       airDate: json['air_date'] as String,
-      characters:
-          (json['characters'] as List<dynamic>)
-              .map((e) => e as String)
-              .toList(),
+      characters: (json['characters'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
       url: json['url'] as String,
       created: json['created'] as String,
       episode: json['episode'] as String,

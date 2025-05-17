@@ -19,13 +19,13 @@ LocationResultModel _$LocationResultModelFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$LocationResultModelToJson(
-  LocationResultModel instance,
-) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'type': instance.type,
-  'dimension': instance.dimension,
-  'residents': instance.residents,
-  'url': instance.url,
-  'created': instance.created,
-};
+        LocationResultModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'type': instance.type,
+      'dimension': instance.dimension,
+      'residents': instance.residents,
+      'url': instance.url,
+      'created': instance.created,
+    };
